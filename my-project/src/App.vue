@@ -3,17 +3,19 @@
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
     <index></index>
+    <mdinput></mdinput>
   </div>
 </template>
 
 <script>
 import Hello from './components/Hello'
 import index from './views/index'
-
+import mdinput from './views/input'
 export default {
   components: {
     Hello,
-    index
+    index,
+    mdinput
   }
 }
 </script>
