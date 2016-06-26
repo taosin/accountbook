@@ -1,52 +1,65 @@
 <template>
-  <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <hello></hello>
-    <index></index>
-    <mdinput></mdinput>
+  <div>
+    <router-view  transition-mode="out-in"></router-view>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-import index from './views/index'
-import mdinput from './views/input'
-export default {
-  components: {
-    Hello,
-    index,
-    mdinput
+  export default {
+    components: {
+    }
   }
-}
 </script>
 
-<style>
-html {
-  height: 100%;
+<style lang="less">
+
+
+    .expand-transition {
+
+    }
+
+    .expand-enter {
+        animation: expand-in 0.2s;
+    }
+
+    .expand-leave{
+        animation: expand-out 0.5s;
+    }
+
+    @keyframes expand-in {
+        0% {
+            opacity: 0;
+        }
+        25% {
+            opacity: 0.25;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        75% {
+            opacity: 0.75;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes expand-out {
+       0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-#app {
-  color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
-  font-family: Source Sans Pro, Helvetica, sans-serif;
-  text-align: center;
-}
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
-
-.logo {
-  width: 100px;
-  height: 100px
-}
 </style>
