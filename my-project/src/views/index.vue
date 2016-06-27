@@ -11,8 +11,8 @@
         <span slot="label">查账</span>
       </tabbar-item>
       <tabbar-item >
-        <img slot="icon" v-link="{path:'/index/deletes'}">
-        <span slot="label">销账</span>
+        <img slot="icon" v-link="{path:'/index/analysis'}">
+        <span slot="label">算账</span>
       </tabbar-item>
       <tabbar-item>
         <img slot="icon" v-link="{path:'/index/settings'}">

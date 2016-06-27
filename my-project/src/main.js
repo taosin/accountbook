@@ -5,7 +5,7 @@ import index from './views/index.vue'
 import add from './views/add.vue'
 import list from './views/list.vue'
 import settings from './views/settings.vue'
-import deletes from './views/delete.vue'
+import analysis from './views/analysis.vue'
 window.Vue = Vue
 Vue.use(Router)
 const router = new Router({
@@ -33,8 +33,8 @@ router.map({
       '/settings': {
         component: settings
       },
-      '/deletes': {
-        component: deletes
+      '/analysis': {
+        component: analysis
       }
     }
   }
