@@ -1,43 +1,41 @@
 <template>
   <div>
-    <group title="default format: YYYY-MM-DD">
-      <datetime :value.sync="value1" @on-change="change" title="Birthday"></datetime>
+    <group title="记账开始时间">
+      <datetime :value.sync="value" format="YYYY-MM-DD" @on-change="change" title="start time"></datetime>
     </group>
-
-    <group title="YYYY-MM-DD HH:mm">
-      <datetime :value.sync="value2" format="YYYY-MM-DD HH:mm" @on-change="change" title="start time" inline-desc="select hour and minute"></datetime>
+    <group title="总共花费">
     </group>
-
-    <group title="value as placeholder">
-      <datetime :value.sync="value3" format="YYYY-MM-DD HH:mm" @on-change="change" title="start time"></datetime>
+      <cell v-for="li in lists" is-link>{{li.name}}---{{li.total}}</cell>
+    <group>
+      <cell title="人均花费">33333</cell>
     </group>
-
-    <group title="specified min-year and max-year">
-      <datetime :value.sync="value4" :min-year=2000 :max-year=2016 format="YYYY-MM-DD HH:mm" @on-change="change" title="years after 2000"></datetime>
+    <group title="计算支出">
+      <cell title="陶鑫">33333</cell>
+      <cell title="陶鑫">33333</cell>
+      <cell title="陶鑫">33333</cell>
+      <cell title="陶鑫">33333</cell>
     </group>
-
-    <group title="specified template text in Chinese">
-      <datetime :value.sync="value5" :min-year=2000 :max-year=2016 format="YYYY-MM-DD HH:mm" @on-change="change" title="Chinese" year-row="{value}年" month-row="{value}月" day-row="{value}日" hour-row="{value}点" minute-row="{value}分" confirm-text="完成" cancel-text="取消"></datetime>
-    </group>
-
   </div>
 </template>
 
 <script>
-import { Datetime, Group } from 'vux'
+import { Datetime, Group, Cell } from 'vux'
 
 export default {
   components: {
     Datetime,
-    Group
+    Group,
+    Cell
   },
   data () {
     return {
-      value1: '2016-02-11',
-      value2: '',
-      value3: 'please select',
-      value4: 'please select',
-      value5: '请选择日期'
+      value: '',
+      lists: [
+        { name: 'taoxin', total: '300' },
+        { name: 'taoxin', total: '300' },
+        { name: 'taoxin', total: '300' },
+        { name: 'taoxin', total: '300' }
+      ]
     }
   },
   methods: {

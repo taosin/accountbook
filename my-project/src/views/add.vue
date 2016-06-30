@@ -3,7 +3,7 @@
     <group >
       <x-input title="金额" v-model="money"></x-input>
       <x-input title="用途" v-model="usey"></x-input>
-      <datetime :value.sync="datetime" format="YYYY-MM-DD HH:mm" @on-change="change" title="时间" ></datetime>
+      <datetime :value.sync="date" format="YYYY-MM-DD HH:mm" @on-change="change" title="时间" ></datetime>
       <x-input title="备注" v-model="remark"></x-input>
       <x-button type="primary" @click="submit">添加</x-button>
       <alert :show.sync="show" title="提示">添加成功！</alert>
@@ -25,7 +25,7 @@
     },
     data () {
       return {
-        datetime: '',
+        date: '',
         money: '',
         usey: '',
         remark: '',
@@ -42,7 +42,7 @@
     }
   }
 </script>
-<style scoped>
+<style >
   .weui_cell_ft .weui_btn {
     margin-left: 5px;
     vertical-align: middle;

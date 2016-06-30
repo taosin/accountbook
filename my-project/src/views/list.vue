@@ -27,19 +27,19 @@
 <script>
   const list = [{
     name: 'Airyland',
-    avatar: 'static/demo/comment/1.jpg',
+    // avatar: 'static/demo/comment/1.jpg',
     time: '2016-06-12',
     price: '22',
     content: '买菜'
   }, {
     name: 'Vux',
-    avatar: 'static/demo/comment/2.jpg',
+    // avatar: 'static/demo/comment/2.jpg',
     time: '2016-05-12',
     price: '66',
     content: '纯净水'
   }, {
     name: 'Secret',
-    avatar: 'static/demo/comment/3.jpg',
+    // avatar: 'static/demo/comment/3.jpg',
     time: '2016-03-12',
     price: '12',
     content: '买菜'
