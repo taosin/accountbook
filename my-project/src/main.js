@@ -6,6 +6,7 @@ import add from './views/add.vue'
 import list from './views/list.vue'
 import settings from './views/settings.vue'
 import analysis from './views/analysis.vue'
+import header from './views/header.vue'
 window.Vue = Vue
 Vue.use(Router)
 const router = new Router({
@@ -24,6 +25,9 @@ router.map({
     name: 'index',
     component: index,
     subRoutes: {
+      '/': {
+        component: add
+      },
       '/add': {
         component: add
       },
@@ -35,6 +39,9 @@ router.map({
       },
       '/analysis': {
         component: analysis
+      },
+      '/header': {
+        component: header
       }
     }
   }

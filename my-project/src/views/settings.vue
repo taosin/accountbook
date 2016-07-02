@@ -1,7 +1,7 @@
 <template>
   <div>
     <group>
-      <cell title="启用个人头像" value="已启用"></cell>
+      <cell title="个人头像" link="/index/header"></cell>
     </group>
     <tip>账单列表中功能是否显示个人头像</tip>
 
