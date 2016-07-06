@@ -4,19 +4,19 @@
       <li class="discuss_item" v-for="comment in list">
         <div class="discuss_opr">
           <span class="media_tool_meta tips_global meta_praise" :class="{'praised': comment.has_praised}">
-            <span class="praise_num">{{comment.price | currency '¥'}}</span>
+            <span class="praise_num">{{comment._serverData.money | currency '¥'}}</span>
           </span>
         </div>
 
         <div class="user_info">
-          <strong class="nickname">{{comment.name}}</strong>
+          <strong class="nickname">{{comment._serverData.name}}</strong>
           <img class="avatar" :src="comment.avatar">
         </div>
         <div class="discuss_message">
-          <span class="discuss_status">{{comment.status}}</span>
-          <div class="discuss_message_content">{{comment.content}}</div>
+          <span class="discuss_status">{{comment._serverData.remark}}</span>
+          <div class="discuss_message_content">{{comment.usey}}</div>
         </div>
-        <p class="discuss_extra_info">{{comment.time}}
+        <p class="discuss_extra_info">{{comment._serverData.date}}
           <a v-if="comment.is_from_me" class="discuss_del js_del" href="javascript:;" data-my-id="<#=my_id#>" data-content-id="<#=content_id#>">删除</a>
         </p>
       </li>
@@ -25,29 +25,27 @@
 </template>
 
 <script>
-  const list = [{
-    name: 'Airyland',
-    // avatar: 'static/demo/comment/1.jpg',
-    time: '2016-06-12',
-    price: '22',
-    content: '买菜'
-  }, {
-    name: 'Vux',
-    // avatar: 'static/demo/comment/2.jpg',
-    time: '2016-05-12',
-    price: '66',
-    content: '纯净水'
-  }, {
-    name: 'Secret',
-    // avatar: 'static/demo/comment/3.jpg',
-    time: '2016-03-12',
-    price: '12',
-    content: '买菜'
-  }]
+  import { getArticles } from './../service/accountService'
   export default {
     data () {
       return {
-        list: list
+        list: []
+      }
+    },
+    vuex: {
+      getters: {
+        data: state => state.articles
+      },
+      actions: {
+        getArticles
+      }
+    },
+    created () {
+      this.getArticles()
+    },
+    watch: {
+      data () {
+        this.list = this.data
       }
     },
     methods: {
