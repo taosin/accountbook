@@ -46,11 +46,12 @@
     methods: {
       submit () {
         // this.show = true
-        const data = []
+        const data = {}
         data.money = this.money
         data.usey = this.usey
         data.date = this.date
         data.remark = this.remark
+        // debugger
         this.addAccount(data)
       }
     }
