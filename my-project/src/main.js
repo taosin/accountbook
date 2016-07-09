@@ -7,6 +7,7 @@ import list from './views/list.vue'
 import settings from './views/settings.vue'
 import analysis from './views/analysis.vue'
 import header from './views/header.vue'
+// Vue.use(require('./ext/vue_ext.js'))
 window.Vue = Vue
 Vue.use(Router)
 const router = new Router({

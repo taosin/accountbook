@@ -9,12 +9,11 @@
         </div>
 
         <div class="user_info">
-          <strong class="nickname">{{comment._serverData.name}}</strong>
+          <strong class="nickname">{{comment._serverData.remark}}</strong>
           <img class="avatar" :src="comment.avatar">
         </div>
         <div class="discuss_message">
-          <span class="discuss_status">{{comment._serverData.remark}}</span>
-          <div class="discuss_message_content">{{comment.usey}}</div>
+          <span class="discuss_status">{{comment._serverData.usey}}</span>
         </div>
         <p class="discuss_extra_info">{{comment._serverData.date}}
           <a v-if="comment.is_from_me" class="discuss_del js_del" href="javascript:;" data-my-id="<#=my_id#>" data-content-id="<#=content_id#>">删除</a>

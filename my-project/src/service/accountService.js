@@ -19,6 +19,6 @@ export const addAccount = ({
     date: data.date,
     remark: data.remark
   }).then(function (object) {
-    dispatch('addAccount', results)
+    dispatch('addAccount', object)
   })
 }
