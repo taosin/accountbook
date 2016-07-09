@@ -1,9 +1,9 @@
-export const getArticles = ({
+export const getAccount = ({
   dispatch
 }) => {
   const query = new AV.Query('Account')
   query.find().then(function (results) {
-    dispatch('getArticles', results)
+    dispatch('getAccount', results)
   }, function (error) {
   })
 }
@@ -20,5 +20,30 @@ export const addAccount = ({
     remark: data.remark
   }).then(function (object) {
     dispatch('addAccount', object)
+  })
+}
+
+export const doLogin = ({
+  dispatch
+}, data) => {
+  const login = new AV.Query('Users')
+  login.equalTo('username', data.username)
+  login.equalTo('password', data.password)
+  login.find().then(function (results) {
+    dispatch('doLogin', results)
+  }, function (error) {
+  })
+}
+
+export const doRegister = ({
+  dispatch
+}, data) => {
+  const User = AV.Object.extend('Users')
+  const register = new User()
+  register.save({
+    username: data.username,
+    password: data.password
+  }).then(function (object) {
+    dispatch('doRegister', object)
   })
 }

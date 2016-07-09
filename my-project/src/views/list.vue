@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import { getArticles } from './../service/accountService'
+  import { getAccount } from './../service/accountService'
   export default {
     data () {
       return {
@@ -33,14 +33,14 @@
     },
     vuex: {
       getters: {
-        data: state => state.articles
+        data: state => state.accounts
       },
       actions: {
-        getArticles
+        getAccount
       }
     },
     created () {
-      this.getArticles()
+      this.getAccount()
     },
     watch: {
       data () {

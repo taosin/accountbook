@@ -19,7 +19,8 @@
       <cell title="频道设置" is-link></cell>
     </group>
     <tip>设置频道</tip>
-    <x-button type="warn" @click="logout">注销</x-button>
+    <x-button type="warn" @click="logout" v-if="flag">注销</x-button>
+    <x-button type="primary" @click="tologin" v-else>登录帐号</x-button>
   </div>
 </template>
 
@@ -39,7 +40,8 @@ export default {
   },
   data () {
     return {
-      phone: true
+      phone: true,
+      flag: false
     }
   },
   methods: {
@@ -47,7 +49,16 @@ export default {
       console.log('change:', value)
     },
     logout () {
-      console.info('success')
+      this.flag = !this.flag
+      window.router.go({
+        path: './../login'
+      })
+    },
+    tologin () {
+      this.flag = !this.flag
+      window.router.go({
+        path: './../login'
+      })
     }
   }
 }
