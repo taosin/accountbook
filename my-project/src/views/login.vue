@@ -7,6 +7,7 @@
 	</Group>
 	<group>
      <x-button type="primary" @click="login">登录</x-button>
+     <alert :show.sync="show" title="提示">用户名或密码出错</alert>
     </group>
 	</div>
 </template>
@@ -32,15 +33,18 @@
     data () {
       return {
         username: null,
-        password: null
+        password: null,
+        show: false
       }
     },
     watch: {
       result () {
-        if (this.result) {
+        if (this.result.length > 0) {
           window.router.go({
             path: '/index/'
           })
+        } else {
+          this.show = true
         }
       }
     },

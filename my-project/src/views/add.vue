@@ -28,7 +28,7 @@
     },
     data () {
       return {
-        date: this.formatDate(new Date(), 'yyyy-MM-dd hh:mm'),
+        date: this.$formatDate(new Date(), 'yyyy-MM-dd hh:mm'),
         money: null,
         usey: null,
         remark: null,
@@ -46,7 +46,6 @@
     watch: {
       result () {
         if (this.result) {
-          debugger
           this.show = true
         }
       }
@@ -61,31 +60,6 @@
           data.remark = this.remark
           this.addAccount(data)
         }
-      },
-      // 日期格式化
-      formatDate (input, format) {
-        if (!input || !format) {
-          return ''
-        }
-        input = new Date(new Date(input).getTime() - 8 * 3600 * 1000)
-        var date = {
-          'M+': input.getMonth() + 1,
-          'd+': input.getDate(),
-          'h+': input.getHours() + 8,
-          'm+': input.getMinutes(),
-          's+': input.getSeconds(),
-          'q+': Math.floor((input.getMonth() + 3) / 3),
-          'S+': input.getMilliseconds()
-        }
-        if (/(y+)/i.test(format)) {
-          format = format.replace(RegExp.$1, (input.getFullYear() + '').substr(4 - RegExp.$1.length))
-        }
-        for (var k in date) {
-          if (new RegExp('(' + k + ')').test(format)) {
-            format = format.replace(RegExp.$1, RegExp.$1.length === 1 ? date[k] : ('00' + date[k]).substr(('' + date[k]).length))
-          }
-        }
-        return format
       }
     }
   }

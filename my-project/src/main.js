@@ -9,7 +9,7 @@ import analysis from './views/analysis.vue'
 import header from './views/header.vue'
 import login from './views/login.vue'
 import register from './views/register.vue'
-// Vue.use(require('./ext/vue_ext.js'))
+Vue.use(require('./ext/vue_ext.js'))
 window.Vue = Vue
 Vue.use(Router)
 const router = new Router({
