@@ -11,8 +11,9 @@ exports.install = function install (Vue) {
 
   function h5remove (key) {
     window.localStorage.removeItem(key)
-
-// 替换字符串中指定位置的字符      function replaceStr(allstr, start, num, changestr){
+  }
+// 替换字符串中指定位置的字符
+  function replaceStr (allstr, start, num, changestr) {
     return allstr.substring(0, start - 1) + changestr + allstr.substring(start + num - 1, allstr.length)
   }
     // 获取cookie的值

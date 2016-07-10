@@ -20,7 +20,6 @@
     </group>
     <tip>设置频道</tip>
     <x-button type="warn" @click="logout" v-if="flag">注销</x-button>
-    <x-button type="primary" @click="tologin" v-else>登录帐号</x-button>
   </div>
 </template>
 
@@ -29,6 +28,12 @@ import { Number, Cell, Group, Tip, Switch, XButton } from 'vux'
 
 export default {
   ready () {
+    const username = this.$h5getValue('username')
+    if (username) {
+      this.flag = true
+    } else {
+      this.flag = false
+    }
   },
   components: {
     Number,
@@ -49,12 +54,7 @@ export default {
       console.log('change:', value)
     },
     logout () {
-      this.flag = !this.flag
-      window.router.go({
-        path: './../login'
-      })
-    },
-    tologin () {
+      this.$h5remove('username')
       this.flag = !this.flag
       window.router.go({
         path: './../login'

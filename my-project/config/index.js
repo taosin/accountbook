@@ -1,6 +1,5 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
-
 module.exports = {
   build: {
     env: require('./prod.env'),
@@ -20,5 +19,10 @@ module.exports = {
     env: require('./dev.env'),
     port: 8181,
     proxyTable: {}
-  }
+  },
+  'ACCESS_KEY': 'ghqBV5qXT19D8UOIGDmFw9u8efcMzP-mOnQi1BE5',
+  'SECRET_KEY': 'cGGNbQmh7xKuHQPDfibTZWmxKssc_JSDKKwILUXB',
+  'Bucket_Name': 'taoxin167',
+  'Domain': 'http://7xs43y.com1.z0.glb.clouddn.com/'
 }
+

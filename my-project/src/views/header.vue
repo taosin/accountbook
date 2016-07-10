@@ -1,7 +1,7 @@
 <template>
   <div>
     <group>
-    <cell title="店铺门头照片"></cell>
+    <cell title="个人头像"></cell>
       <div class="header-img"></div>
     </group>
     <group>

@@ -40,6 +40,7 @@
     watch: {
       result () {
         if (this.result.length > 0) {
+          this.$h5setValue('username', this.username)
           window.router.go({
             path: '/index/'
           })

@@ -24,8 +24,8 @@
         flash_swf_url: 'js/plupload/Moxie.swf',
         dragdrop: true,
         chunk_size: '4mb',
-        uptoken_url: 'http://localhost:8116/admin/getToken',
-        domain: 'http://7xrvyq.com1.z0.glb.clouddn.com/',
+        uptoken_url: 'http://localhost:8181/uptoken',
+        domain: 'http://7xs43y.com1.z0.glb.clouddn.com/',
         get_new_uptoken: false,
         auto_start: true,
         init: {

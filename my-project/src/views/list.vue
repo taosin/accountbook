@@ -16,10 +16,13 @@
           <span class="discuss_status">{{comment._serverData.usey}}</span>
         </div>
         <p class="discuss_extra_info">{{comment._serverData.date}}
-          <a v-if="comment.is_from_me" class="discuss_del js_del" href="javascript:;" data-my-id="<#=my_id#>" data-content-id="<#=content_id#>">删除</a>
         </p>
       </li>
+      <li class="discuss_item">
+      共{{total}}条记录
+      </li>
     </ul>
+    
   </div>
 </template>
 
@@ -28,7 +31,8 @@
   export default {
     data () {
       return {
-        list: []
+        list: [],
+        total: null
       }
     },
     vuex: {
@@ -45,6 +49,7 @@
     watch: {
       data () {
         this.list = this.data
+        this.total = this.data.length
       }
     },
     methods: {
